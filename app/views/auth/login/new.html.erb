@@ -1,2 +1,13 @@
-<h1>Auth::Login#new</h1>
-<p>Find me in app/views/auth/login/new.html.erb</p>
+<main class="container">
+<%= form_with url: auth_login_path, scope: :user do |form| %>
+    <label for="email">
+        Email
+        <%= form.email_field :email, required: true %>
+    </label>
+    <label for="password">
+        Password
+        <%= form.password_field :password, required: true %>
+    </label>
+<%= form.submit "Sign In" %>
+<% end %>
+</main>
