@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts ""
+puts "------------------------------- Seeding... ----------------------------------"
+puts ""
+
+FactoryBot.create_list(:user, 10)
+
+puts ""
+puts "------------------------------- Seeding done. -----------------------------"
+puts ""
