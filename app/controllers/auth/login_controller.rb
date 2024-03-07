@@ -1,4 +1,5 @@
 class Auth::LoginController < ApplicationController
+  before_action :authenticate_user!   
   def new
   end
 
@@ -14,7 +15,8 @@ class Auth::LoginController < ApplicationController
     end
   end
   
-  def destroy
-    
+  def logout
+    Current.user = nil
+    reset_session
   end
 end
