@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def un_authenticate_user!
+        if !current_user
+            redirect_to login_path
+        end
+    end
+
     def current_user
         Current.user ||= auth_user_from_session
     end
